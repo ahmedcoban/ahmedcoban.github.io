@@ -1,8 +1,31 @@
+/**
+ * Victoria Kirst (vrk@stanford.edu)
+ * This is a rough copy of Squarespace's Bedford layout:
+ * https://bedford-demo.squarespace.com/
+ *
+ * http://cs193x.stanford.edu
+ */
+
+a {
+  cursor: pointer;
+}
+
+a.button {
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 100px;
+  transition: 0.3s all;
+}
+
+a.button:hover {
+  background-color: white;
+  color: black;
+}
+
 body {
   color: rgba(26, 26, 26, 0.7);
   font-family: "Lora", serif;
   margin: 0;
-  display: flex;
 }
 
 .button,
@@ -16,10 +39,34 @@ header h1 strong,
   text-transform: uppercase;
 }
 
+#details {
+  display: flex;
+  justify-content: space-between;
+}
+
+#details div {
+  width: calc(50% - 20px);
+}
+
+#details img {
+  width: 100%;
+}
+
+#details h1 {
+  color: rgb(61, 153, 145);
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
 footer {
   background-color: rgb(31, 31, 31);
+  color: rgba(255, 255, 255, 0.8);
   padding: 75px;
   text-align: center;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 footer img {
@@ -30,6 +77,17 @@ footer img {
 
 footer img:hover {
   transform: scale(1.2);
+}
+
+h1 a.button {
+  border: 0;
+  background-color: rgb(54, 179, 168);
+}
+
+h1 a.button:hover {
+  background-color: rgba(54, 179, 168, 0.75);
+  /* In this case, I'm using inherit to ignore the other :hover rule I set. */
+  color: inherit;
 }
 
 header {
@@ -46,6 +104,12 @@ header {
   justify-content: center;
 }
 
+/*
+::before is a content selector:
+https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+This is similar to creating a <div> overlay, like the example from the slides.
+See that the header is set to "position: relative;".
+*/
 header::before {
   content: "";
   position: absolute;
@@ -53,7 +117,12 @@ header::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+header a {
+  color: white;
+  text-decoration: none;
 }
 
 header h1 {
@@ -84,7 +153,6 @@ header nav {
 
   font-size: 14px;
   padding: 20px;
-  font-weight: bold;
 
   display: flex;
   justify-content: space-between;
@@ -121,14 +189,88 @@ section {
   text-align: center;
 }
 
-.half-site {
-  width: 50%;
-  border: 10px solid grey;
+/* ABOUT */
+
+.about-header {
+  background-image: url("images/joel.jpeg");
 }
 
-.textbox {
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 80%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.profile {
   display: flex;
   flex-direction: column;
-  flex: 1;
   align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-shadow: 2px 2px 14px 4px #c4c4c4;
+  padding-bottom: 16px;
+  border-radius: 8px;
+}
+
+.profile ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.progress-bar {
+  border: 2px solid black;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.progress-bar * {
+  border-radius: 4px;
+}
+
+.progress-bar .progress-85 {
+  width: 170px;
+  background: rgb(255, 82, 34);
+}
+
+.progress-bar .progress-75 {
+  width: 450px;
+  background: rgb(255, 123, 0);
+}
+
+.progress-bar .progress-60 {
+  width: 120px;
+  background: rgb(255, 196, 0);
+}
+
+.progress-bar .progress-55 {
+  width: 110px;
+  background: rgb(217, 253, 37);
+}
+
+.contact-main {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-main img {
+  width: 200px;
+  transition: 0.3s all;
+}
+
+.contact-main .translate-top:hover {
+  transform: rotateY(180deg) translateY(-50px);
+}
+
+.contact-main .translate-bottom:hover {
+  transform: rotateY(180deg) translateY(50px);
 }
