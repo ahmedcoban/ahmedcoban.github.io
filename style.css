@@ -104,12 +104,7 @@ header {
   justify-content: center;
 }
 
-/*
-::before is a content selector:
-https://developer.mozilla.org/en-US/docs/Web/CSS/::before
-This is similar to creating a <div> overlay, like the example from the slides.
-See that the header is set to "position: relative;".
-*/
+
 header::before {
   content: "";
   position: absolute;
@@ -192,7 +187,7 @@ section {
 /* ABOUT */
 
 .about-header {
-  background-image: url("images/joel.jpeg");
+  background-image: url("images/yosemite-valley.jpg");
 }
 
 .about-main {
@@ -243,7 +238,7 @@ section {
 }
 
 .progress-bar .progress-75 {
-  width: 450px;
+  width: 250px;
   background: rgb(255, 123, 0);
 }
 
@@ -257,20 +252,33 @@ section {
   background: rgb(217, 253, 37);
 }
 
-.contact-main {
+.contactme-header{
+  background-image: url("images/joel.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactme-main {
   display: flex;
   justify-content: center;
 }
 
-.contact-main img {
+.contactme-main img {
   width: 200px;
   transition: 0.3s all;
 }
 
-.contact-main .translate-top:hover {
+.contactme-main .translate-top:hover {
   transform: rotateY(180deg) translateY(-50px);
 }
 
-.contact-main .translate-bottom:hover {
+.contactme-main .translate-bottom:hover {
   transform: rotateY(180deg) translateY(50px);
 }
