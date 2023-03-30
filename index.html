@@ -25,11 +25,49 @@
     </header>
     <section>
       <div id="main">
-        <h1>Marmara Üniversitesi</h1>
-        <p>
+        <h1 id="p4">Marmara Üniversitesi</h1>
+        <p id="p3">
           Bilgisayar Mühendisliğinde 3. yıl
           devam...
         </p>
+
+        <p id="p2"> Ünveristeyi Görmek için buton 2'ye tıkla</p>
+
+        <div class="container">
+            <button onclick="Tikla()" >Buton 1</button>
+        </div>
+    
+        <br>
+    
+        <div class="container">
+            <button onclick="Tikla2()">Buton 2</button>
+        </div>
+    
+        <br>
+     
+        <div class="container">
+            <button onclick="RenkDegistir()">Rengi değiş</button>
+        </div>    
+    
+        <br>
+    
+        <div class="container">
+            <button onmouseover="FareUzerinde()" 
+                    onmouseout="FareUzerindeDegil()">Fare üzerinde butonu</button>
+        </div>   
+    
+        <br>
+    
+        <div class="input">
+            <input type="text" id="input1" >
+            
+        </div>
+        <div class="container">
+            <button onclick="inputAl()">Input'tan veri al ve gor</button>
+        </div> 
+
+
+
       </div>
 
       <div id="details">
@@ -45,6 +83,7 @@
         </div>
       </div>
     </section>
+    
     <footer>
       <address>ahmed design, Safranbolu</address>
       <p>Marmara Universitesi</p>
@@ -55,5 +94,64 @@
         <img src="./images/github.png" alt="Github" />
       </a>
     </footer>
+  
+
+
+
+
+    <script>
+      function Tikla() {
+          alert("Buton 1'e tıklandı.");
+          var element = document.getElementById("p3");
+          var element4 = document.getElementById("p4");
+          var element2 = document.getElementById("p2");
+          element.style.color = "blue";
+          element4.style.color = "blue";
+          element2.style.color = "green";
+      }
+
+      function Tikla2() {
+          var element = document.getElementById("p2");  
+          element.innerText = "Üniversite: Marmara Üniversitesi";
+          element.style.color = "orange";
+          
+      }        
+
+      function RenkDegistir() {
+          var element = document.getElementById("p2");
+          element.style.color = "red";
+      }               
+
+      function FareUzerinde() {
+          var element = document.getElementById("p2");  
+          element.innerText = "Üniversite: Marmara Üniversitesi";
+          element.style.color = "brown";
+
+      }                       
+
+      function FareUzerindeDegil() {
+          var element = document.getElementById("p2");
+
+          element.style.color = "yellow";
+          element.innerText = "Fare uzerinde degil.";
+
+      }        
+
+      function inputAl() {
+          var element = document.getElementById("input1");
+          var element2 = document.getElementById("p2");
+          element2.innerText = element.value;
+          element.style.color = "red";
+          element2.style.color = "red";
+      }
+
+  </script>
+  
+  
+  
+  
+  
   </body>
 </html>
+
+
