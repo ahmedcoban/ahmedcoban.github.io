@@ -282,3 +282,9 @@ section {
 .contactme-main .translate-bottom:hover {
   transform: rotateY(180deg) translateY(50px);
 }
+
+#D3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
