@@ -79,6 +79,60 @@ footer img:hover {
   transform: scale(1.2);
 }
 
+
+/****************** Footer kısmı burada başlıyor. ***********************/
+
+
+.footer-icons-text {
+  font-size: 25px;
+  color: #000;
+  margin: 0 50px 0 0;
+}
+
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Footer'daki iconların üstüne fare geldiğinde renk geğiştiriyor. */
+.icon-container:hover {
+  background-color: #4e2ecc;
+  /* mor renk olarak değiştir */
+}
+
+.icon-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-container:hover img {
+  filter: invert(100%);
+  /* Logonun rengini ters çevir */
+}
+
+
+
+
+
+
+
+
+
 h1 a.button {
   border: 0;
   background-color: rgb(54, 179, 168);
@@ -288,3 +342,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+
+
