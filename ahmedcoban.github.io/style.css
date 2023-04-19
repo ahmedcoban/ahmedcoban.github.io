@@ -79,7 +79,9 @@ footer img:hover {
   transform: scale(1.2);
 }
 
+
 /****************** Footer kısmı burada başlıyor. ***********************/
+
 
 .footer-icons-text {
   font-size: 25px;
@@ -123,6 +125,14 @@ footer img:hover {
   /* Logonun rengini ters çevir */
 }
 
+
+
+
+
+
+
+
+
 h1 a.button {
   border: 0;
   background-color: rgb(54, 179, 168);
@@ -147,6 +157,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 
 header::before {
   content: "";
@@ -295,7 +306,7 @@ section {
   background: rgb(217, 253, 37);
 }
 
-.contactme-header {
+.contactme-header{
   background-image: url("images/joel.jpeg");
   background-size: cover;
   background-position: center;
@@ -331,3 +342,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+
+
