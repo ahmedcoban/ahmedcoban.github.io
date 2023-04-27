@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <title>Apple Game</title>
+  </head>
+  <body>
+    <div class="score-nav">
+      <div class="statistics">
+        <p class="score">Score: <span id="score">0</span></p>
+      </div>
+    </div>
+
+    <section class="main-section">
+      <button class="start-button" onclick="startgame()" id="start-button">Start Game</button>
+    </section>
+
+    <section class="main-section hidden" id="game-over">
+      <h1 class="game-over-text">Game Over!</h1>
+    </section>
+
+    <script>
+      let score = 0;
+      let appleAmount = 0;
+      let gameEnded = false;
+
+      scoreText = document.getElementById("score");
+      scoreText.textContent = score;
+
+      rateText = document.getElementById("appleRate");
+
+      gameOverScreen = document.getElementById("game-over");
+
+      function startgame() {
+        buttonVisibility = document.getElementById("start-button");
+        buttonVisibility.style.display = "none";
+
+        setInterval(spawnApple, 1500);
+      }
+
+      function spawnApple() {
+        appleAmount++;
+        const xAxis = Math.random() * document.body.clientWidth;
+        const appleImage = document.createElement("img");
+        const randomNumber = Math.floor(Math.random() * 2); // 1 veya 2
+        appleImage.src = `./images/${randomNumber === 1 ? "apple.png" : "armut.png"}`;
+        appleImage.id = "apple" + appleAmount;
+        appleImage.style.width = "10rem";
+        appleImage.style.position = "absolute";
+        appleImage.style.cursor = "pointer";
+        appleImage.style.left = xAxis + "px";
+        document.body.appendChild(appleImage);
+        var interval = fallApple(appleImage);
+        appleImage.onmousedown = () => clickApple(appleImage, interval);
+      }
+
+      function fallApple(img) {
+        let top = 60; // px
+        var interval = setInterval(() => {
+          img.style.top = top + "px";
+          top = top + 2;
+          if (top >= document.body.clientHeight) {
+            destroyApple(img);
+            clearInterval(interval);
+          }
+          console.log("bruh");
+        }, 15);
+
+        return interval;
+      }
+
+      function destroyApple(img) {
+        img.remove();
+      }
+
+      function clickApple(img, interval) {
+        score++;
+        destroyApple(img);
+        scoreText.textContent = score;
+        clearInterval(interval);
+      }
+    </script>
+  </body>
+</html>
